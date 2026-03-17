@@ -1,0 +1,97 @@
+@use 'variables' as *; 
+
+body {
+    background-color: $background-color;
+    color: $font-color;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    height: 100vh;
+
+    .divider {
+        width: 90%;
+        height: 2px;
+        border-bottom: 1px solid $accent-color;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+
+    button {
+        background-color: $background-color-2;
+        border: none;
+        padding: 8px;
+        color: $font-color-2;
+        border-radius: 4px;
+        margin: 0 0.2rem;
+        transition-duration: 0.2s;
+    }
+
+    button:hover {
+        color: $background-color;
+        background-color: $highlight;
+    }
+
+    button:hover.delete {
+        background-color: rgb(255, 109, 109);
+    }
+
+    button:hover.cancel {
+        background-color: rgb(255, 216, 109);
+    }
+
+    input {
+        background-color: $background-color-2;
+        color: $font-color-2;
+        border: none;
+        padding: 0 0.25rem;
+        border-radius: 4px;
+        font-size: medium;
+        outline: none;
+        margin: 0.2rem;
+    }
+
+    .sidebar {
+        border-right: 2px solid $accent-color;
+        .side-card {
+            margin: 0.5rem;
+            padding: 4px 1.2rem;
+            border-radius: 8px;
+            background-color: $background-color-2;
+        }
+        .side-card.selected {
+            background-color: $highlight;
+            color: $background-color;
+        }
+    }
+    .content {
+        padding-left: 2rem;
+        display: grid;
+        grid-template-rows: 4rem 2px 8rem auto;
+        .users {
+            width: 90%;
+            overflow-y: scroll;
+            table {
+                width: 100%;
+                th {
+                    text-align: left;
+                    color: $font-color-2;
+                }
+                td {
+                    width: 33%;
+                    padding: 0.25rem;
+                    border-collapse: collapse;
+                    border-bottom: 1px solid $accent-color;
+                }
+            }
+        }
+    }
+}
